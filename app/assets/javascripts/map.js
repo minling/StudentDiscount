@@ -1,6 +1,7 @@
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.getCurrentPosition();
+    debugger;
   }
   else {
     $('#location').html("Geolocation is not supported by this browser.");
@@ -12,18 +13,19 @@ function showPosition(position) {
 }
 
 function initMap(){
-
+// debugger;
+// var latitude = locations.coords.latitude
+// var longitude = locations.coords.longitude
  var locations = [
-      ['Bondi Beach', -33.890542, 151.274856, 4],
-      ['Coogee Beach', -33.923036, 151.259052, 5],
-      ['Cronulla Beach', -34.028249, 151.157507, 3],
-      ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-      ['Maroubra Beach', -33.950198, 151.259302, 1]
+      ['Pinkberry', 40.747623, -73.986145],
+      ['Flatiron School', 40.705329, -74.01397],
+      ['Kickboxing', 40.746526, -73.992778],
+      ['Eight turn crepe', 40.722350, -73.996625]
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: new google.maps.LatLng(-33.92, 151.25),
+      zoom: 12,
+      center: new google.maps.LatLng(40.7127, -74.0059),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
