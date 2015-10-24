@@ -17,7 +17,7 @@ function initMap(){
 // var latitude = locations.coords.latitude
 // var longitude = locations.coords.longitude
  var locations = [
-      ['Pinkberry', 40.747623, -73.986145],
+      ['Pinkberry', 40.747623, -73.986145, 'www.pinkberry.com'],
       ['Flatiron School', 40.705329, -74.01397],
       ['Kickboxing', 40.746526, -73.992778],
       ['Eight turn crepe', 40.722350, -73.996625]
@@ -41,7 +41,8 @@ function initMap(){
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          infowindow.setContent(locations[i][0]);
+          //setting the content 
+          infowindow.setContent(locations[i][0] + locations[i][3]);
           infowindow.open(map, marker);
         }
       })(marker, i));
