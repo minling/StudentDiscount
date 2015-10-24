@@ -10,11 +10,10 @@
  //      google.maps.event.addDomListener(window, 'load', initialize);
  //    </script>
 
-alert('heymeow' );
  var map;
   function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 8
+    center: {lat: 40.7127, lng: -74.0059},
+    zoom: 13
   });
 }
