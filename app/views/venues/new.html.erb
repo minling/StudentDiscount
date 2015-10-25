@@ -1,1 +1,23 @@
-hey
+<h1> Add a new Venue! </h1>
+
+<%= form_for(@venue) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %><br>
+
+  <%= f.label :discount %>
+  <%= f.text_field :discount %><br>
+  Tags:
+  <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+
+Make a New Tag Here: <br>
+
+ <%= f.fields_for :tags, Tag.new do |tag_field| %>
+  <%= tag_field.label :name %>
+  <%= tag_field.text_field :name %>
+  <% end %><br><br>
+
+  <%= f.submit 'Add Venue' %>
+<% end %>
