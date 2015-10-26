@@ -1,5 +1,24 @@
+
 <h1>Venue Index Page</h1>
 
 <h2>Add a new venue! </h2>
 
 <%= link_to " Add a New Venue", new_venue_path %>
+
+
+<h2> All Venues </h2>
+<ul>
+  <% Venue.all.each do |venue|%>
+  <li><%= venue.name %></li>
+  <li><%= venue.address %></li>
+  <li><%= venue.discount %></li>
+  <li><%= venue.latitude %></li>
+  <li><%= venue.longitude %></li>
+  For:
+  <% venue.tags.each do |tag| %>
+    <ul>
+      <li><%= tag.name %></li>
+    </ul>
+      <% end %>
+  <% end %>
+</ul>
