@@ -46,6 +46,7 @@ function initMap(){
           infowindow.open(map, marker);
         }
       })(marker, i));
+google.maps.event.addDomListener(window, "load", initMap);
     }
 } 
 

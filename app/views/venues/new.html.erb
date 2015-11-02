@@ -1,56 +1,62 @@
-<h1> Add a new Venue! </h1>
+<div class="js-new-venue">
+  <h1> Add a new Venue! </h1>
 
-<%= form_for(@venue) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
+  <%= form_for(@venue) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
 
-  <%= f.label :address %>
-  <%= f.text_field :address %><br>
+    <%= f.label :address %>
+    <%= f.text_field :address %><br>
 
-  <%= f.label :discount %>
-  <%= f.text_field :discount %><br>
-  Tags:
-  <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+    <%= f.label :discount %>
+    <%= f.text_field :discount %><br>
+    Tags:
+    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
 
-Make a New Tag Here: <br>
+  Make a New Tag Here: <br>
 
- <%= f.fields_for :tags, Tag.new do |tag_field| %>
-  <%= tag_field.label :name %>
-  <%= tag_field.text_field :name %>
-  <% end %><br><br>
+   <%= f.fields_for :tags, Tag.new do |tag_field| %>
+    <%= tag_field.label :name %>
+    <%= tag_field.text_field :name %>
+    <% end %><br><br>
 
-  <%= f.submit 'Add Venue' %>
-<% end %>
+    <%= f.submit 'Add Venue' %>
+  <% end %>
 
-<div id="locationField">
-      <input id="autocomplete" placeholder="Enter your address"
-             onFocus="geolocate()" type="text"></input>
-    </div>
+  <div id="locationField">
+        <input id="autocomplete" placeholder="Enter your address"
+               onFocus="geolocate()" type="text"></input>
+      </div>
 
-    <table id="address">
-      <tr>
-        <td class="label">Street address</td>
-        <td class="slimField"><input class="field" id="street_number"
-              disabled="true"></input></td>
-        <td class="wideField" colspan="2"><input class="field" id="route"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">City</td>
-        <td class="wideField" colspan="3"><input class="field" id="locality"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">State</td>
-        <td class="slimField"><input class="field"
-              id="administrative_area_level_1" disabled="true"></input></td>
-        <td class="label">Zip code</td>
-        <td class="wideField"><input class="field" id="postal_code"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">Country</td>
-        <td class="wideField" colspan="3"><input class="field"
-              id="country" disabled="true"></input></td>
-      </tr>
-    </table>
+      <table id="address">
+        <tr>
+          <td class="label">Street address</td>
+          <td class="slimField"><input class="field" id="street_number"
+                disabled="true"></input></td>
+          <td class="wideField" colspan="2"><input class="field" id="route"
+                disabled="true"></input></td>
+        </tr>
+        <tr>
+          <td class="label">City</td>
+          <td class="wideField" colspan="3"><input class="field" id="locality"
+                disabled="true"></input></td>
+        </tr>
+        <tr>
+          <td class="label">State</td>
+          <td class="slimField"><input class="field"
+                id="administrative_area_level_1" disabled="true"></input></td>
+          <td class="label">Zip code</td>
+          <td class="wideField"><input class="field" id="postal_code"
+                disabled="true"></input></td>
+        </tr>
+        <tr>
+          <td class="label">Country</td>
+          <td class="wideField" colspan="3"><input class="field"
+                id="country" disabled="true"></input></td>
+        </tr>
+      </table>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_key']%>&signed_in=true&libraries=places&callback=initAutocomplete"
+    async defer>
+</script>
