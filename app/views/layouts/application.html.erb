@@ -8,6 +8,9 @@
   <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_key']%>&callback=initMap">
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_key']%>&signed_in=true&libraries=places&callback=initAutocomplete"
+        async defer>
+        </script>
 </head>
 <body>
 
