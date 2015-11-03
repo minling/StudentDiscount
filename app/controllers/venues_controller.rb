@@ -13,7 +13,6 @@ class VenuesController < ApplicationController
   end
 
   def create
-    binding.pry
     @venue = Venue.new(venue_params)
     @venue.save
     redirect_to venues_path
@@ -21,7 +20,7 @@ class VenuesController < ApplicationController
 
   private
     def venue_params
-      params.require(:venue).permit(:name, :address, :discount, :tags_attributes =>[:name],:tag_ids => [])
+      params.require(:venue).permit(:name, :address, :discount, :latitude, :longitude, :tags_attributes =>[:name],:tag_ids => [])
     end
 
 

@@ -65,15 +65,15 @@ function initAutocomplete() {
   // [END region_getplaces]
 }
 
-var placeSearch, autocomplete;
-var componentForm = {
-  street_number: 'short_name',
-  route: 'long_name',
-  locality: 'long_name',
-  administrative_area_level_1: 'short_name',
-  country: 'long_name',
-  postal_code: 'short_name'
-};
+// var placeSearch, autocomplete;
+// var componentForm = {
+//   street_number: 'short_name',
+//   route: 'long_name',
+//   locality: 'long_name',
+//   administrative_area_level_1: 'short_name',
+//   country: 'long_name',
+//   postal_code: 'short_name'
+// };
 
 // function initAddressAutocomplete(places) {
 //   alert('yay');
@@ -94,13 +94,16 @@ var componentForm = {
 
 function fillInAddress(places) {
   // Get the place details from the autocomplete object.
-  alert('yay');
+  // alert('yay');
   // var place = autocomplete.getPlace();
   var place = places[0]
 
   $('#form-address').children().val(place.formatted_address)
   $('#form-name').children().val(place.name)
-  debugger;
+
+  $('#form-coordinates').children().first().val(place.geometry.location.lat())
+  $('#form-coordinates').children().last().val(place.geometry.location.lng())
+  // debugger;
 
   // for (var component in componentForm) {
   //   document.getElementById(component).value = '';
