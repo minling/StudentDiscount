@@ -2,31 +2,34 @@
   <h1> Add a new Venue! </h1>
 
   <%= form_for(@venue) do |f| %>
+  <div id='form-name'>
     <%= f.label :name %>
     <%= f.text_field :name %><br>
+  </div>
 
     <%= f.label :address %>
+  <div id='form-address'>
     <%= f.text_field :address %><br>
+  </div>
 
     <%= f.label :discount %>
     <%= f.text_field :discount %><br>
+
     Tags:
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
 
   Make a New Tag Here: <br>
 
    <%= f.fields_for :tags, Tag.new do |tag_field| %>
-    <%= tag_field.label :name %>
+    <%= tag_field.label :name_tag %>
     <%= tag_field.text_field :name %>
     <% end %><br><br>
 
-    <%= f.submit 'Add Venue' %>
-  <% end %>
 
   <div id="locationField">
         <input id="autocomplete" placeholder="Enter your address"
                onFocus="geolocate()" type="text"></input>
-      </div>
+  </div>
 
       <table id="address">
         <tr>
@@ -55,8 +58,14 @@
                 id="country" disabled="true"></input></td>
         </tr>
       </table>
+    <%= f.submit 'Add Venue' %>
+  <% end %>
 </div>
+
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+
 
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_key']%>&signed_in=true&libraries=places&callback=initAutocomplete"
     async defer>
-</script>
+</script> 

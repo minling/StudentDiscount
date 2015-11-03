@@ -11,7 +11,7 @@ var componentForm = {
   postal_code: 'short_name'
 };
 
-function initAutocomplete() {
+function initAddressAutocomplete() {
   if(!$('.js-new-venue').length) {
     return;
   }
