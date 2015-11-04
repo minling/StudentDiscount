@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'gon'
+
 gem 'pry'
 
 gem 'figaro'

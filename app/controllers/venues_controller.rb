@@ -24,5 +24,4 @@ class VenuesController < ApplicationController
       params.require(:venue).permit(:name, :address, :discount, :latitude, :longitude, :tags_attributes =>[:name],:tag_ids => [])
     end
 
-
 end
