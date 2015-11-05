@@ -13,7 +13,7 @@ class VenuesController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
     @venue = Venue.new(venue_params)
     @venue.save
     redirect_to venues_path

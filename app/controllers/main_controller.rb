@@ -1,7 +1,7 @@
 class MainController < ApplicationController
 
   def index
-    binding.pry
+    # binding.pry
      gon.locations  
   end
 end
