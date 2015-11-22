@@ -1,5 +1,5 @@
 function initAutocomplete() {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  var map = new google.maps.Map(document.getElementById('venue-map'), {
     center: {lat: 40.7127, lng: -74.0059},
     zoom: 13,
     mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -8,7 +8,7 @@ function initAutocomplete() {
   // Create the search box and link it to the UI element.
   var input = document.getElementById('pac-input');
   var searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
@@ -139,4 +139,14 @@ function geolocate() {
   }
 
 }
+
+
+$(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
 

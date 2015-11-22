@@ -1,10 +1,19 @@
+<!--   <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
+  <div id="venue-map"></div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_key']%>&signed_in=true&libraries=places&callback=initAutocomplete"
+    async defer>
+</script> 
+
+<!-- form -->
 <div class="js-new-venue">
   <h1> Add a new Venue! </h1>
 
   <%= form_for(@venue) do |f| %>
   <div id='form-name'>
     <%= f.label :name %>
-    <%= f.text_field :name %><br>
+    <%= f.text_field :name, :id => 'pac-input' %><br>
   </div>
 
   <div id='form-address'>
@@ -32,11 +41,3 @@
     <%= f.submit 'Add Venue' %>
   <% end %>
 </div>
-
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map"></div>
-
-
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_key']%>&signed_in=true&libraries=places&callback=initAutocomplete"
-    async defer>
-</script> 
