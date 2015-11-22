@@ -18,6 +18,7 @@ function initMap(){
 // var longitude = locations.coords.longitude
 
 var locations = gon.locations
+// [venue.name, venue.latitude, venue.longitude, venue.discount, venue.address, venue.tags.map { |tag| tag.name }]
  // var locations = [
  //      ['Pinkberry', 40.747623, -73.986145, 'www.pinkberry.com'],
  //      ['Flatiron School', 40.705329, -74.01397],
@@ -44,7 +45,10 @@ var locations = gon.locations
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           //setting the content 
-          infowindow.setContent(locations[i][0] + locations[i][3]);
+          infowindow.setContent('<h2>'+locations[i][0] +'</h2>' 
+                                + '<div class="content"><b>Discount: </b>' + locations[i][3] + '</div>'
+                                + '<div class="content"><b>Address: </b>' + locations[i][4] + '</div>'
+                                + '<div class="content"><b>Applies to: </b>' + locations[i][5] + '</div>');
           infowindow.open(map, marker);
         }
       })(marker, i));

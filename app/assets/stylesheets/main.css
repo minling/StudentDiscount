@@ -5,8 +5,12 @@
     color: #FFF;
 }
 
- #map { 
+#map { 
   height: 100%; 
+}
+
+.content {
+  /*font-weight: bold;*/
 }
 
 html, body { 
