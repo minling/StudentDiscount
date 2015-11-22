@@ -1,14 +1,16 @@
-<h1>Welcome to Student Discount</h1>
-
-<div>
-  <%= link_to " Add a New Venue", new_venue_path %>
-</div>
-
-<button onclick="getLocation()" class="button-locate">Locate me</button>
+<header>
+  <div id="nav">
+    <ul>
+      <li><%= link_to "Add a New Venue", new_venue_path %></li>
+      <li><button onclick="getLocation()" class="button-locate">Locate me</button></li>
+    </ul>
+  </div>
+</header>
 
 <div id="location"></div>
 <div id="map"></div>
 
+
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_key']%>&callback=initMap">
-  </script>
+</script>

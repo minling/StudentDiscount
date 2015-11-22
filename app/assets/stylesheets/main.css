@@ -1,12 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+#nav {
+  background: red;
+  width: 100%;
+}
+
+#nav ul {
+  list-style-type: none;
+  float: right;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#nav li{
+  display: inline;
+  padding-right: 20px;
+}
+
+a{ 
+  color: black;
+  text-decoration: none;
+}
 
 .button-locate {
-    padding: 10px 15px;
-    background: #4479BA;
-    color: #FFF;
+  padding: 10px 15px;
+  background: #4479BA;
+  color: #FFF;
 }
 
 #map { 
-  height: 100%; 
+  height: 90%; 
+  width: 100%;
 }
 
 .venue-info {
