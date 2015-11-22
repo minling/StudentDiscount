@@ -19,12 +19,6 @@ function initMap(){
 
 var locations = gon.locations
 // [venue.name, venue.latitude, venue.longitude, venue.discount, venue.address, venue.tags.map { |tag| tag.name }]
- // var locations = [
- //      ['Pinkberry', 40.747623, -73.986145, 'www.pinkberry.com'],
- //      ['Flatiron School', 40.705329, -74.01397],
- //      ['Kickboxing', 40.746526, -73.992778],
- //      ['Eight turn crepe', 40.722350, -73.996625]
- //    ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
@@ -46,9 +40,9 @@ var locations = gon.locations
         return function() {
           //setting the content 
           infowindow.setContent('<h2>'+locations[i][0] +'</h2>' 
-                                + '<div class="content"><b>Discount: </b>' + locations[i][3] + '</div>'
-                                + '<div class="content"><b>Address: </b>' + locations[i][4] + '</div>'
-                                + '<div class="content"><b>Applies to: </b>' + locations[i][5] + '</div>');
+                                + '<div class="venue-info"><b>Discount: </b>' + locations[i][3] + '</div>'
+                                + '<div class="venue-info"><b>Address: </b>' + locations[i][4] + '</div>'
+                                + '<div class="venue-info"><b>Applies to: </b>' + locations[i][5] + '</div>');
           infowindow.open(map, marker);
         }
       })(marker, i));
