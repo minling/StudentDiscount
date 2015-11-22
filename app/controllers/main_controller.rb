@@ -1,7 +1,7 @@
 class MainController < ApplicationController
 
   def index
-    # binding.pry
-     gon.locations  
+    # @map = Venue.get_maps_array
+     gon.locations = Venue.get_maps_array
   end
 end

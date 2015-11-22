@@ -17,13 +17,13 @@ function initMap(){
 // var latitude = locations.coords.latitude
 // var longitude = locations.coords.longitude
 
-// var locations = gon.locations
- var locations = [
-      ['Pinkberry', 40.747623, -73.986145, 'www.pinkberry.com'],
-      ['Flatiron School', 40.705329, -74.01397],
-      ['Kickboxing', 40.746526, -73.992778],
-      ['Eight turn crepe', 40.722350, -73.996625]
-    ];
+var locations = gon.locations
+ // var locations = [
+ //      ['Pinkberry', 40.747623, -73.986145, 'www.pinkberry.com'],
+ //      ['Flatiron School', 40.705329, -74.01397],
+ //      ['Kickboxing', 40.746526, -73.992778],
+ //      ['Eight turn crepe', 40.722350, -73.996625]
+ //    ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,

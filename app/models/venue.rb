@@ -5,7 +5,10 @@ class Venue < ActiveRecord::Base
   accepts_nested_attributes_for :tags, allow_destroy: true, :reject_if => lambda { |a| a[:name].blank? }
 
   def self.get_maps_array
-    self.all.map
+
+    self.all.map do |venue|
+      [venue.name, venue.latitude, venue.longitude, venue.discount]
+    end
   end
 
 end
