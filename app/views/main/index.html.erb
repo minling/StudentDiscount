@@ -2,6 +2,21 @@
 <div id="location"></div>
 <div id="map"></div>
 
+<div id="venues-container">
+  <% @venues.map do |venue|%>
+  <div class="venue">
+    <div class="venue-info">
+      <b>Name:</b> <%= venue.name %>
+    </div>
+    <div class="venue-info">
+      <b>Address:</b> <%= venue.address %>
+    </div>
+    <div class="venue-info">
+      <b>Discount:</b> <%= venue.discount %>
+    </div>
+  </div>
+  <% end %>
+</div>
 
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_key']%>&callback=initMap">

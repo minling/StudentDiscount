@@ -48,6 +48,7 @@ var locations = gon.locations
       })(marker, i));
 google.maps.event.addDomListener(window, "load", initMap);
     }
+  map.fitBounds(map);
 } 
 
 

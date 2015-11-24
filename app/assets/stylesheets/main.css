@@ -28,7 +28,7 @@ a{
 }
 
 #map { 
-  height: 90%; 
+  height: 50%; 
   width: 100%;
 }
 
@@ -40,4 +40,27 @@ html, body {
   height: 100%; 
   margin: 0; 
   padding: 0; 
+}
+
+#venue-container {
+  /*display: flex;*/
+  display: block;
+  /*flex-direction: row;*/
+/*  flex-flow: row wrap;
+  justify-content: space-around;*/
+  height: 500px;
+}
+
+.venue {
+  float: left;
+  background: #38CCC4;
+  padding-bottom: 10px;
+  margin: 20px;
+  width: 30%;
+  height: 300px;
+}
+
+.venue-info {
+  margin: 10%;
+  color: white;
 }

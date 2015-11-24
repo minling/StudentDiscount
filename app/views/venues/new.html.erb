@@ -8,36 +8,56 @@
 
 <!-- form -->
 <div class="js-new-venue">
-  <h1> Add a new Venue! </h1>
+  <div class="form-background">
+     <div class="venue-title">Add a New Venue</div>
 
-  <%= form_for(@venue) do |f| %>
-  <div id='form-name'>
-    <%= f.label :name %>
-    <%= f.text_field :name, :id => 'pac-input' %><br>
+    <%= form_for(@venue) do |f| %>
+    <div class="form-control">
+      <div id='form-name'>
+        <%#= f.label :name %>
+        <%= f.text_field :name, :id => 'pac-input', :placeholder => 'Enter the Venue Name', :class => 'form-input' %><br>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <div id='form-address'>
+        <%#= f.label :address %>
+        <%= f.text_field :address, :placeholder => 'Address', :class => 'form-input' %>
+      </div>
+    </div>
+
+    <div id='form-coordinates'>
+      <%= f.hidden_field :latitude %>
+      <%= f.hidden_field :longitude %>  
+    </div>
+
+    <div class="form-control">
+      <%#= f.label :discount %>
+      <%= f.text_field :discount, :placeholder => 'Discount Description', :class => 'form-input' %>
+    </div>
+
+    <div class="form-control">
+      Applies To:
+      <%#= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %> 
+      <% f.collection_check_boxes :tag_ids, Tag.all, :id, :name do |b| %>
+      <%= b.label { b.check_box(class: "squaredFour") } %>
+      <% end %>
+    </div>
+
+    <div class="form-control">
+      If none of the above, make a new option here: 
+      <%= f.fields_for :tags, Tag.new do |tag_field| %>
+      <%#= tag_field.label :name_tag %> 
+    </div>
+    <div class="form-control">   
+      <label>Applies to:</label>
+      <%= tag_field.text_field :name , :class =>"form-input-tag"%>
+      <% end %>
+    </div>
+
+    <div class="form-control">
+      <%= f.submit 'Add Venue', :class => 'submit-button'%>
+    <% end %>
+    </div>
   </div>
-
-  <div id='form-address'>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div id='form-coordinates'>
-    <%= f.hidden_field :latitude %>
-    <%= f.hidden_field :longitude %>  
-  </div>
-    <%= f.label :discount %>
-    <%= f.text_field :discount %><br>
-
-    Tags:
-    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
-
-  Make a New Tag Here: <br>
-
-   <%= f.fields_for :tags, Tag.new do |tag_field| %>
-    <%= tag_field.label :name_tag %>
-    <%= tag_field.text_field :name %>
-    <% end %><br><br>
-
-    <%= f.submit 'Add Venue' %>
-  <% end %>
 </div>

@@ -3,12 +3,161 @@ body {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
 }
+
 #venue-map{
   width: 100%;
-  height: 50%;
+  height: 40%;
 }
 
 #pac-input {
-  width: 200px;
-  height: 20px;
+  width: 80%;
+}
+
+.js-new-venue {
+  background: #38CCC4;
+  height: 50%;
+  overflow: auto;
+}
+
+.form-input {
+  width: 80%;
+  padding: 10px 0px 10px 10px;
+  border: none;
+  letter-spacing: 0.3em;
+}
+
+.form-input-tag {
+  width: 63%;
+  padding: 10px 0px 10px 10px;
+  border: none;
+  letter-spacing: 0.2em;
+}
+
+.form-background {
+  margin-right: auto;
+  margin-left: auto;
+  width: 500px;
+  text-align: center;
+  /*background: #38CCC4;*/
+  margin-top: 20px;
+}
+
+.venue-title {
+  font-size: 300%;
+  color: white;
+}
+
+.form-control {
+  padding: 10px 0px 10px 0px;
+}
+
+.submit-button {
+  background: #F77775;
+  color: #fff;
+  width: 82%;
+  border: 0;
+  padding: 10px 0px 10px 10px;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+
+.squaredFour{
+  width: 20px;
+  position: relative;
+  margin: 20px auto;
+  label {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fcfff4;
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    &:after {
+      content: '';
+      width: 9px;
+      height: 5px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border: 3px solid #333;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+    &:hover::after {
+      opacity: 0.5;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }    
+}
+
+.squaredThree .collection_check_boxes{
+  width: 20px;
+  position: relative;
+  margin: 20px auto;
+  label {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(top, #222 0%, #45484d 100%);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+    &:after {
+      content: '';
+      width: 9px;
+      height: 5px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border: 3px solid #fcfff4;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+    &:hover::after {
+      opacity: 0.3;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }    
+  }
+}
+
+
+::-webkit-input-placeholder {
+   /*text-align: center;*/
+   padding-bottom: 50px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
 }
