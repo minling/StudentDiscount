@@ -5,13 +5,13 @@
 <div id="venues-container">
   <% @venues.map do |venue|%>
   <div class="venue">
-    <div class="venue-info">
-      <b>Name:</b> <%= venue.name %>
+    <div class="venue-card-info">
+      <h1> <%= venue.name %></h1>
     </div>
-    <div class="venue-info">
+    <div class="venue-card-info">
       <b>Address:</b> <%= venue.address %>
     </div>
-    <div class="venue-info">
+    <div class="venue-card-info">
       <b>Discount:</b> <%= venue.discount %>
     </div>
   </div>

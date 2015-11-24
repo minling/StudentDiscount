@@ -43,11 +43,11 @@ html, body {
 }
 
 #venue-container {
-  /*display: flex;*/
-  display: block;
+  display: flex;
+  /*display: block;*/
   /*flex-direction: row;*/
-/*  flex-flow: row wrap;
-  justify-content: space-around;*/
+  flex-flow: row wrap;
+  /*justify-content: center;*/
   height: 500px;
 }
 
@@ -60,7 +60,7 @@ html, body {
   height: 300px;
 }
 
-.venue-info {
-  margin: 10%;
+.venue-card-info {
+  margin: 8%;
   color: white;
 }
