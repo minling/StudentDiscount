@@ -16,7 +16,15 @@
     </div>
   </div>
   <% end %>
+
+  <div class="venue">
+    <div class="venue-card-info">
+      <h1>Know of a student discount?</h1>
+      <h1><%= link_to "Add one here!", new_venue_path, :class => "add-venue-button" %></h1>
+    </div>
+  </div>
 </div>
+
 
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_key']%>&callback=initMap">
