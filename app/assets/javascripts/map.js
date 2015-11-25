@@ -1,16 +1,46 @@
 function getLocation() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13
+  });
+  // var infoWindow = new google.maps.InfoWindow({map: map});
+  var infoWindow = new google.maps.Marker({
+    map:map,
+    // draggable:true,
+    // animation: google.maps.Animation.DROP,
+    // position: new google.maps.LatLng(59.32522, 18.07002),
+    icon: 'http://icons.iconarchive.com/icons/newidols.ru/shop/24/star-icon.png' // null = default icon
+  });
+
+  // Try HTML5 geolocation.
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition();
-    debugger;
-  }
-  else {
-    $('#location').html("Geolocation is not supported by this browser.");
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      // infoWindow.setContent('You are here');
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
   }
 }
 
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+};
+
 function showPosition(position) {
   $('#location').html("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
-}
+};
 
 function initMap(){
 // debugger;
@@ -48,8 +78,7 @@ var locations = gon.locations
       })(marker, i));
 google.maps.event.addDomListener(window, "load", initMap);
     }
-  map.fitBounds(map);
-} 
+}; 
 
 
 // function initMap() {

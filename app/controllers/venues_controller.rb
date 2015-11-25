@@ -16,7 +16,7 @@ class VenuesController < ApplicationController
     # binding.pry
     @venue = Venue.new(venue_params)
     @venue.save
-    redirect_to venues_path
+    redirect_to root_path
   end
 
   private

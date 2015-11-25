@@ -3,6 +3,7 @@
 <head>
   <title>Studentdiscount</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= include_gon %>
@@ -12,11 +13,15 @@
 <body>
 
   <header>
+    <div id="nav-logo">
+      Student<span class="logo-discount">Discount</span>
+     </div> 
+
     <div id="nav">
       <ul>
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Add a New Venue", new_venue_path %></li>
-        <li><button onclick="getLocation()" class="button-locate">Locate me</button></li>
+        <li><%= link_to "Add a New Venue", new_venue_path %> <i class="fa fa-plus-circle"></i></li>
+        <li><button onclick="getLocation()" class="button-locate">Locate me <i class="fa fa-location-arrow"></i></button></li>
       </ul>
     </div>
   </header>

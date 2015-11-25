@@ -1,4 +1,13 @@
+#nav-logo {
+  font-weight: 600;
+  float: left;
+  padding: 25px 0px 0px 25px;
+  font-size: 30px;
+}
 
+.logo-discount {
+  color: #38CCC4;
+}
 
 #nav {
   background: red;
@@ -23,7 +32,7 @@
 
 .button-locate {
   padding: 10px 15px;
-  background: #4479BA;
+  background: #38CCC4;
   color: #FFF;
 }
 
