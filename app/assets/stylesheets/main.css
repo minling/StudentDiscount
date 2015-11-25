@@ -31,9 +31,15 @@
 }
 
 .button-locate {
-  padding: 10px 15px;
-  background: #38CCC4;
-  color: #FFF;
+  text-align: center;
+  text-decoration: none;
+  height: 36px;
+  color: white;
+  padding: .3em 2em;
+  background: #F77775;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  border: none;
 }
 
 #map { 
