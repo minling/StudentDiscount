@@ -38,10 +38,7 @@
 
     <div class="form-control">
       Applies To:
-      <%#= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %> 
-      <% f.collection_check_boxes :tag_ids, Tag.all, :id, :name do |b| %>
-      <%= b.label { b.check_box(class: "squaredFour") } %>
-      <% end %>
+      <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %> 
     </div>
 
     <div class="form-control">

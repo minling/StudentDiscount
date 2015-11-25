@@ -24,6 +24,7 @@ body {
   padding: 10px 0px 10px 10px;
   border: none;
   letter-spacing: 0.3em;
+  font-weight: 600;
 }
 
 .form-input-tag {
