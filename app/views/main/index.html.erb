@@ -14,6 +14,12 @@
     <div class="venue-card-info">
       <b>Discount:</b> <%= venue.discount %>
     </div>
+    <div class="venue-card-info">
+      <b>Applies to:</b> 
+      <% venue.tags.map do |tag| %>
+        <%= tag.name %>
+      <%end%>
+    </div>
   </div>
   <% end %>
 
