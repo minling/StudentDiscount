@@ -5,6 +5,11 @@
   font-size: 30px;
 }
 
+.logo {
+  text-decoration: none;
+  color: #000;
+}
+
 .logo-discount {
   color: #38CCC4;
 }
