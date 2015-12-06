@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails_12factor', group: :production
 
+ruby '2.0.0'
+
 gem 'gon'
 
 gem 'pry'
