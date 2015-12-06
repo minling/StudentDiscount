@@ -3,6 +3,13 @@
 <div id="map"></div>
 
 <div id="venues-container">
+  <div class="venue">
+    <div class="venue-card-info">
+      <h1>Know of a student discount?</h1>
+      <h1><%= link_to "Add one here!", new_venue_path, :class => "add-venue-button" %></h1>
+    </div>
+  </div>
+  
   <% @venues.map do |venue|%>
   <div class="venue">
     <div class="venue-card-info">
@@ -23,12 +30,6 @@
   </div>
   <% end %>
 
-  <div class="venue">
-    <div class="venue-card-info">
-      <h1>Know of a student discount?</h1>
-      <h1><%= link_to "Add one here!", new_venue_path, :class => "add-venue-button" %></h1>
-    </div>
-  </div>
 </div>
 
 
